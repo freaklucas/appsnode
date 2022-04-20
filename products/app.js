@@ -72,12 +72,12 @@ app.delete("/products/:id", (request, response) => {
 
   products.splice(productIndex, 1);
 
-  productFile();
+  createProductFile();
 
   return response.json({ message: "Produto removido com sucesso!" });
 });
 
-function productFile() {
+function createProductFile() {
   fs.writeFile("products.json", JSON.stringify(products), (err, data) => {
     if (err) {
       console.log(err);
