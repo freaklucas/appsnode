@@ -13,15 +13,21 @@ app.get("/expenses", (req, res) => {});
 
 app.listen(3000, () => console.log("Server ready"));
 
-let db;
+let db, trips, expenses;
 
-mongo.connect(url, {
-  userNewParser: true,
-  useUnifiedTopology: true,
-},
-(err, client)) => {
-    if(err) {
-        console.log(err)
+mongo.connect(
+  url,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
+  (err, client) => {
+    if (err) {
+      console.error(err);
+      return;
     }
-    db = client.db("tripconst");
-};
+    db = client.db("tripcost");
+    trips = db.collection("trips");
+    expenses = db.collection("expenses");
+  }
+);
