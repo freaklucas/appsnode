@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 
+app.use(express.urlencoded({
+    extended: true
+}));
+
 
 app.get('/', (req, res) => {
     res.send(`
@@ -11,9 +15,20 @@ app.get('/', (req, res) => {
     `);
 });
 
+app.get('/testes/:idUsuarios?/:parametros?', (req, res) => {
+    
+    // profiles/3
+    // profiles/?chave1=valor1&cahve2=valor2
+
+    console.log(req.params);
+    console.log(req.query);
+    res.send(req.params);
+});
+
 app.post('/', (req, res) => {
-    res.send('sending msg...')
-})
+    console.log(req.body);
+    res.send(`O que você me enviou foi: ${req.body.nome}`);
+});
 
 app.get('/contact', (req, res) => {
     res.send('contact');
