@@ -30,6 +30,21 @@ app.use(express.urlencoded({
 
 app.use(express.static(path.resolve(__dirname, 'public')));
 
+
+const sessionOptions = session({
+  secret: 'capacapa',
+  store: new MongoStore({ mongooseConnection: mongoose.connection}),
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24 * 7,
+    httpOnly: true
+  }
+});
+
+app.use(sessionOptions);
+app.use(flash());
+
 app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
 
