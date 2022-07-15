@@ -1,4 +1,8 @@
 exports.paginaInicial = (req, res) => {
+  req.session.user = {
+    name: 'Lucas',
+    loggad: true
+  };
   res.render('index');
   
   return;

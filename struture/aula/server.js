@@ -14,7 +14,7 @@ mongoose.connect(process.env.CONNECTIONSTRING, {
   }).catch(e => console.log(e));
 
 const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 
 
@@ -33,13 +33,14 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 
 const sessionOptions = session({
   secret: 'capacapa',
-  store: new MongoStore({ mongooseConnection: mongoose.connection}),
+  // store: new MongoStore({ mongooseConnection: mongoose.connection}),
   resave: false,
   saveUninitialized: false,
   cookie: {
     maxAge: 1000 * 60 * 60 * 24 * 7,
     httpOnly: true
-  }
+  },
+  store: MongoStore.create({mongoUrl: process.env.CONNECTIONSTRING})
 });
 
 app.use(sessionOptions);
