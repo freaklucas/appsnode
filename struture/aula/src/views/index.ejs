@@ -7,7 +7,10 @@
     <h1>
       Título
     </h1>
+
+    <!-- <h3><%= csrfToken %></h3> -->
     <form action="/" method="post">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
       <label>Cliente</label>
       <input type="text" name="client">
       <button>Submit</button>
