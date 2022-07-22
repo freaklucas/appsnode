@@ -1,23 +1,35 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
 
-<%- include('includes/head'); %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
 
-<body>
+    <div class="col-lg-8 my-3">
+      <h1 class="text-center">Agenda</h1>
+      <p class="text-center lead">Seus contatos estão abaixo</p>
 
-  <section class="container">
-    <h1>
-      Título
-    </h1>
+      <div class="row">
+        <div class="col my-3">
+          <div class="alert alert-danger">Um erro qualquer</div>
+        </div>
+      </div>
 
-    <!-- <h3><%= csrfToken %></h3> -->
-    <form action="/" method="post">
-      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-      <label>Cliente</label>
-      <input type="text" name="client">
-      <button>Submit</button>
-    </form>
-  </section>
+      <div class="responsive-table">
+        <table class="table my-3">
+          <tr>
+            <td>Lucas</td>
+            <td>Oliveira</td>
+            <td>56632235656</td>
+            <td>lucas@gmail.com</td>
+          </tr>
+        </table>
+      </div>
 
-  <script src="./assets/js/bundle.js"></script>
-</body>
+    </div>
 
-</html>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<%- include('includes/footer') %>
