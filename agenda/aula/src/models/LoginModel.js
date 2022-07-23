@@ -21,10 +21,18 @@ class Login {
         this.user = null;
     }
 
-    register() {
+    async register() {
         this.validate();
 
         if (this.errors.length > 0) return;
+
+        try {
+            this.user = await LoginModel.create(this.body);
+        }
+        catch (err) {
+            console.log(err);
+        }
+
     }
 
     validate() {
