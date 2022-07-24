@@ -1,13 +1,8 @@
 exports.middlewareGlobal = (req, res, next) => {
-    console.log();
     
-    if(req.body.client) {
-        req.body.client = req.body.client.replace('Lucas', 'NÃO USE LUCAS');
-        console.log(`Nome É: ${req.body.client}`);
-        console.log();
-    }
+    res.locals.errors = req.flash('errors');
+    res.locals.success = req.flash('success');
 
-    console.log('Passando pelo middleware global');
 
     next();
 }
