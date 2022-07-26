@@ -27,13 +27,22 @@ class Login {
 
         if (this.errors.length > 0) return;
 
+        await this.userExists();
+
+        const salt = bcrypt.genSaltSync(10);
+        this.body.password = bcrypt.hashSync(this.body.password, salt);
+
         try {
             this.user = await LoginModel.create(this.body);
         }
         catch (err) {
             console.log(err);
         }
+    }
 
+    async userExists() {
+        const user = await LoginModel.findOne({ email: this.body.email });
+        if (user) this.errors.push('Usuário já existe.');
     }
 
     validate() {
