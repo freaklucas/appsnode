@@ -29,15 +29,14 @@ class Login {
 
         await this.userExists();
 
+        if (this.errors.length > 0) return;
+
+
         const salt = bcrypt.genSaltSync(10);
         this.body.password = bcrypt.hashSync(this.body.password, salt);
 
-        try {
-            this.user = await LoginModel.create(this.body);
-        }
-        catch (err) {
-            console.log(err);
-        }
+
+        this.user = await LoginModel.create(this.body);
     }
 
     async userExists() {
