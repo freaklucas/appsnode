@@ -1,0 +1,33 @@
+POST http://localhost:4002/products
+content-type: application/json
+
+{
+    "name": "Calça Lilás M",
+    "price": 250
+}
+
+### 
+
+
+GET http://localhost:4002/products
+
+
+###
+
+GET http://localhost:4002/products/75c2fc63-0c81-4255-99fa-aee736c1d5a3
+
+
+###
+
+PUT http://localhost:4002/products/a4960905-8368-474d-8288-879f1a7ae745
+content-type: application/json
+
+{
+    "name": "Calça Lilás Lacoste M",
+    "price": 489
+}
+
+
+### 
+
+DELETE http://localhost:4002/products/4cd1a5b8-1612-4e3d-9170-afa9efc2646d
