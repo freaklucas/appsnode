@@ -2,8 +2,23 @@ POST http://localhost:3000/api/services
 Content-Type: application/json
 
 {
-    "name": "Algum serviço",
-    "description": "Alguma descrição",
-    "price": 5000,
+    "name": "Algum serviço2",
+    "description": "Alguma descrição2",
+    "price": 1000,
     "image": "https://i.ytimg.com/vi/IxxRgajdA1I/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBCnvOpehVUW12Wnzy_2MuNRXlzOA"
 }
+
+###
+
+GET http://localhost:3000/api/services
+Content-Type: application/json
+
+
+###
+
+GET http://localhost:3000/api/services/63b5929d426ffc6e2aabc32d3f
+
+###
+
+DELETE  http://localhost:3000/api/services/63b5929d426ffc6e2aabc32d3f
+Content-Type: application/json

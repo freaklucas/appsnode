@@ -15,13 +15,63 @@ const serviceController = {
             const response = await ServiceModel
                 .create(service); // criando registro no banco
             res.status(201).json({
-                response, msg: "Serviço criado com sucesso!"
+                response, msg: 
+                    "Serviço criado com sucesso!"
             });
         }
         catch(error) {
             console.log(error);
         }
+    },
+    getAll: async (req, res) => {
+        try {
+            const services = await ServiceModel.find();
+            if(!services) {
+                res.status(404).json({
+                    msg: "Id inválido!"
+                });
+                return;
+            }
+            res.json(services);
+        }
+        catch(error) {
+            console.log(error);
+        }
+    },
+    getUnique: async (req, res) => {
+        try {
+            const id = req.params.id;
+            const service = await ServiceModel
+                .findById(id);
+            
+            res.json(service);
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    delete: async (req, res) => {
+        try {
+            const id = req.params.id;
+            const service = await ServiceModel.findById(id);
+            
+            if(!service) {
+                res.status(404).json({
+                    msg: "Id inválido!"
+                });
+                return;
+            }
+
+            const deleteService = await ServiceModel
+                .findByIdAndDelete(id)
+            res.status(200).json({
+                deleteService, msg: "Serviço excluído com sucesso!"
+            });
+
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
+
 
 module.exports = serviceController;
