@@ -43,7 +43,12 @@ const serviceController = {
             const id = req.params.id;
             const service = await ServiceModel
                 .findById(id);
-            
+            if(!services) {
+                res.status(404).json({
+                    msg: "Id inválido!"
+                });
+                return;
+            }
             res.json(service);
         } catch (error) {
             console.log(error);
