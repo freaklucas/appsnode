@@ -22,3 +22,15 @@ GET http://localhost:3000/api/services/63b5929d426ffc6e2aabc32d3f
 
 DELETE  http://localhost:3000/api/services/63b5929d426ffc6e2aabc32d3f
 Content-Type: application/json
+
+###
+
+PUT http://localhost:3000/api/services/63b6cee78a5492febbeb5f9d
+Content-Type: application/json
+
+{
+    "name": "Serviço 2 editado",
+    "description": "Descrição2 editada",
+    "price": 10,
+    "image": "https://i.ytimg.com/vi/Wb3rvC6z5ao/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDRngx41o49jvD4K6d_p1iBWGeC_A"
+}

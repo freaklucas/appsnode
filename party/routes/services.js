@@ -20,4 +20,10 @@ router.route("/services/:id")
         serviceController
         .delete(req, res));
 
+router.route("/services/:id")
+.put((req, res) => 
+    serviceController
+    .update(req, res));
+    
+
 module.exports = router;
