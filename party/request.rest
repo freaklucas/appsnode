@@ -34,3 +34,32 @@ Content-Type: application/json
     "price": 10,
     "image": "https://i.ytimg.com/vi/Wb3rvC6z5ao/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDRngx41o49jvD4K6d_p1iBWGeC_A"
 }
+
+###
+
+POST http://localhost:3000/api/party
+Content-Type: application/json
+
+{
+    "title": "Natal",
+    "author": "Lucas",
+    "description": "Festa de jesus",
+    "budget": 8000,
+    "image": "https://i.ytimg.com/vi/IxxRgajdA1I/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBCnvOpehVUW12Wnzy_2MuNRXlzOA",
+    "quantityPeople": 6,
+    "services": 
+    [
+        {
+            "name": "Algum serviço1",
+            "description": "Alguma descrição1",
+            "price": 2000,
+            "image": "https://i.ytimg.com/vi/IxxRgajdA1I/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBCnvOpehVUW12Wnzy_2MuNRXlzOA"
+        },
+        {
+            "name": "Algum serviço2",
+            "description": "Alguma descrição2",
+            "price": 1000,
+            "image": "https://i.ytimg.com/vi/IxxRgajdA1I/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBCnvOpehVUW12Wnzy_2MuNRXlzOA"
+        }
+    ]
+}

@@ -23,7 +23,7 @@ const partySchema = new Schema({
         type: String,
         required: true
     },
-    quantity: {
+    quantityPeople: {
         type: Number,
         required: true
     },
