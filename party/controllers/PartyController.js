@@ -75,6 +75,58 @@ const partyController = {
             console.log(error);
         }
     },
+    delete: async (req, res) => {
+        try {
+            const id = req.params.id;
+            const party = await PartyModel
+                .findById(id);
+            
+            if(!party) {
+                res.status(404).json({
+                    msg: "Festa não encontrada!"
+                });
+                return;
+            }
+
+            const deleteService = await PartyModel
+                .findByIdAndDelete(id);
+            res.status(200).json({
+                deleteService, 
+                msg: "Festa excluída com sucesso!"
+            });
+
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    update: async (req, res) => {
+        const id = req.params.id;
+
+        const party = {
+            title: req.body.title,
+            author: req.body.author,
+            description: req.body.description,
+            budget: req.body.budget,
+            image: req.body.image,
+            quantityPeople: req.body.quantityPeople,
+            services: req.body.services,
+        };
+
+        const updatedParty = await PartyModel
+            .findByIdAndUpdate(id, party);
+        
+            if(!updatedParty) {
+                res.status(404).json({
+                    msg: "Festa não encontrada!"
+                });
+                return;
+            }
+
+            res.status(200).json({
+                service,
+                msg: "Festa atualizada com sucesso!"
+            });
+    }
 }
 
 module.exports = partyController;

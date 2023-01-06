@@ -25,7 +25,8 @@ const serviceController = {
     },
     getAll: async (req, res) => {
         try {
-            const services = await ServiceModel.find();
+            const services = await ServiceModel
+                .find();
             if(!services) {
                 res.status(404).json({
                     msg: "Id inválido!"
@@ -57,7 +58,8 @@ const serviceController = {
     delete: async (req, res) => {
         try {
             const id = req.params.id;
-            const service = await ServiceModel.findById(id);
+            const service = await ServiceModel
+                .findById(id);
             
             if(!service) {
                 res.status(404).json({
@@ -67,7 +69,7 @@ const serviceController = {
             }
 
             const deleteService = await ServiceModel
-                .findByIdAndDelete(id)
+                .findByIdAndDelete(id);
             res.status(200).json({
                 deleteService, 
                 msg: "Serviço excluído com sucesso!"

@@ -11,7 +11,16 @@ router.route("/party").get(
     (req, res)=> partyController
         .getAll(req, res));
 
-router.route("/party/:id").get((req, res) => partyController
+router.route("/party/:id").get(
+    (req, res) => partyController
     .getUnique(req, res));
 
+router.route("/party/:id").delete(
+    (req, res) => partyController
+        .delete(req,res));
+
+router.route("/party/:id").put(
+    (req, res) => partyController
+        .update(req,res));
+        
 module.exports = router;

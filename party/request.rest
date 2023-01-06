@@ -41,22 +41,22 @@ POST http://localhost:3000/api/party
 Content-Type: application/json
 
 {
-    "title": "Natal",
-    "author": "Lucas",
-    "description": "Festa de jesus",
-    "budget": 8000,
+    "title": "Natal2",
+    "author": "Lucas2",
+    "description": "Festa de jesus2",
+    "budget": 7000,
     "image": "https://i.ytimg.com/vi/IxxRgajdA1I/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBCnvOpehVUW12Wnzy_2MuNRXlzOA",
-    "quantityPeople": 6,
+    "quantityPeople": 2,
     "services": 
     [
         {
-            "name": "Algum serviço1",
+            "name": "Algum serviço2",
             "description": "Alguma descrição1",
             "price": 2000,
             "image": "https://i.ytimg.com/vi/IxxRgajdA1I/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBCnvOpehVUW12Wnzy_2MuNRXlzOA"
         },
         {
-            "name": "Algum serviço2",
+            "name": "Algum serviço3",
             "description": "Alguma descrição2",
             "price": 1000,
             "image": "https://i.ytimg.com/vi/IxxRgajdA1I/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBCnvOpehVUW12Wnzy_2MuNRXlzOA"
@@ -77,5 +77,35 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/api/party/63b729fb09d0e7d442222222ba8f9d8
+DELETE  http://localhost:3000/api/party/63b7886b4216c9a7d42fa8d2
 Content-Type: application/json
+
+
+###
+
+PUT  http://localhost:3000/api/party/63b788f84216c9a7d42fa8e2
+Content-Type: application/json
+
+{
+    "title": "Ano novo",
+    "author": "Luk",
+    "description": "Festa do branco",
+    "budget": 17000,
+    "image": "https://i.ytimg.com/vi/IxxRgajdA1I/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBCnvOpehVUW12Wnzy_2MuNRXlzOA",
+    "quantityPeople": 13,
+    "services": 
+    [
+        {
+            "name": "Algum serviço2",
+            "description": "Alguma descrição1",
+            "price": 2000,
+            "image": "https://i.ytimg.com/vi/IxxRgajdA1I/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBCnvOpehVUW12Wnzy_2MuNRXlzOA"
+        },
+        {
+            "name": "Algum serviço3",
+            "description": "Alguma descrição2",
+            "price": 1000,
+            "image": "https://i.ytimg.com/vi/IxxRgajdA1I/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBCnvOpehVUW12Wnzy_2MuNRXlzOA"
+        }
+    ]
+}
